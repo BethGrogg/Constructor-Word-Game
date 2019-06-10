@@ -1,4 +1,10 @@
 var inquirer = require("inquirer");
+var word = require("./word.js");
+
+var movies = ["Princess Bride", "Return of the Jedi", "Wonder Woman", "Black Panther", "Frozen", "Despicable Me"];
+var hiddenWord = movies[Math.floor(Math.random() * movies.length)];
+
+
 
 var questions = [
     {

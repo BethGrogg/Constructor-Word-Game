@@ -15,7 +15,7 @@ function Letter(letterSpace, isCorrect) {
         }
 
     };
-    this.updateBoolean = function() {
+    this.updateBoolean = function(letterGuessed) {
         for (i=0; i < word.length; i++) {
 
             if (letterGuessed === word[i]) {
@@ -26,7 +26,4 @@ function Letter(letterSpace, isCorrect) {
     };
   };
 
-var newWord = new Letter ('_', false);
-newWord.showAfterGuess();
-
-console.log(displayedValue);
+  var newWord = new Letter ('_', false);
