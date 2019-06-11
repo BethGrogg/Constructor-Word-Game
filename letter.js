@@ -1,29 +1,24 @@
-var word = ['a','p','p','l','e'];
-var answer = [];
-var displayedValue = [];
-var letterGuessed = process.argv[2];
-
-function Letter(letterSpace, isCorrect) {
-    this.letterSpace = letterSpace;
+function Letter(letter) {
+    this.letter = letter;
     this.isCorrect = false;
     this.showAfterGuess = function() {
-        for (i=0; i< word.length; i++) {
-            
-            answer = word[i].split('');
-            displayedValue = displayedValue + "_ ";
-           
+       console.log("in here");
+        if (this.isCorrect) {
+            return this.letter;
+        } else {
+            return '_';
         }
 
     };
+
     this.updateBoolean = function(letterGuessed) {
-        for (i=0; i < word.length; i++) {
 
-            if (letterGuessed === word[i]) {
-                isCorrect = true;
-            }
+            if (letterGuessed === this.letter) {
+                this.isCorrect = true;
+            };
 
-        }
-    };
-  };
+        };
+    };        
 
-  var newWord = new Letter ('_', false);
+ 
+  module.exports = Letter;

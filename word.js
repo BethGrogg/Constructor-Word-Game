@@ -1,17 +1,24 @@
 var letter = require("./letter.js");
 
+function Word (word) {
+    this.word = word;
+    this.wordArray = word.split('');
+    console.log(this.wordArray);
 
-
-function Word (wordArray) {
-    this.wordArray = wordArray;
+    for (i = 0; i < wordArray.length; i++) {
+        this.wordArray.push(new Letter(wordArray[i]));
+       
+    }
     this.wordString = function() {
-        newWord.showAfterGuess();
+        this.wordArray.showAfterGuess();
     };
 
     this.checkTheGuess = function() {
-        newWord.updateBoolean();
+        this.wordArray.updateBoolean();
     };
 
 };
 
-var newWordToGuess = new Word (hiddenWord);
+
+
+module.exports = Word;
