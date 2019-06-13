@@ -1,7 +1,7 @@
 function Letter(letter) {
     this.letter = letter;
     this.isCorrect = false;
-    this.showAfterGuess = function() {
+    this.toString = function() {
        console.log("in here");
         if (this.isCorrect) {
             return this.letter;
